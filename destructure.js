@@ -26,7 +26,7 @@ console.log(obj1);
 //add new variable and default value using destruture
 
 let {department = "computer science"} = obj1;
-obj1.department = "computer science"
+obj1.department =
 console.log(id,name,address,department);
 console.log(obj1);
 
