@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+ //use of arguement before rest   
+function sum() {
+    let s = 0
+    for(let i in arguments){
+     s+=arguments[i] 
+    }
+    console.log(arguments);
+    console.log(s);
+    document.write("sum of multiple arguements using arguements:-"+s+"<br>")
+}
+sum("dj",20,32,23,32)//problem of using arugement if we pass any string in parameter it will concat all the parameters
+sum("cj",12,11,21)
+function sum1(fname , lname,...res) { //advantage of using rest
+  let s1 = 0
+  for(let i in res) 
+  {
+    s1 +=res[i]
+    console.log(s1);
+    
+  }   
+  document.write("sum of multiple arguements using rest:-"+s1)
+}
+sum1("darshi","joshi",12,121,21,2223,3454)
+
+</script>
+</html>

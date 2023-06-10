@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function spread(...args) {
+        let sub = 0   
+        for (let i in args){
+            sub -= args[i]
+        }
+        document.write(sub)
+    }
+   let arr = [12,23,34,45,45,32] 
+   spread(...arr)
+</script>
+<script>
+    let array = [12,21,34,45]
+    let array2 = [...array]
+    console.log(array);
+    console.log(...array);
+    array.push(50)
+    console.log(array);
+    console.log(array2);
+</script>
+</html>
