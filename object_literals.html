@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+    let name = "darshi"
+    let course = "Javascript"
+    let obj = {
+        name : "name", //old way to assign any variable value to object
+        course : "Javascript"
+    }
+    console.log(obj);
+    let obj2 ={
+        name, //new way to add variable value in object but key name and variable name must be same   
+        course,
+    }
+    console.log(obj2);
+    let n = "pakhi";
+    let obj3 = {
+        [n] : "chotu",
+        course : "atus"
+    }
+    console.log(obj3);
+    //new way to create function in object
+    let obj4 = {
+        show(){
+            return `${obj2.name} is working on ${obj2.course}`
+        }
+    }
+    console.log(obj4.show());
+     
+ </script>   
+</body>
+</html>
+
