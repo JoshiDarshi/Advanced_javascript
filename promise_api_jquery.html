@@ -13,8 +13,10 @@
                 console.log("Fetching data from server pls wait");
                 setTimeout(()=>{
                  $.get("https://jsonplaceholder.typicode.com/comments",function(data){ //ye jquery ki get method hoti hai server se data lane ke liye 2 parametre rehte hai isme pehla url
-                   console.log(data);
-                 })
+                   res(data);
+                 }).fail(err =>{
+                    rej("Fail to load json data");
+                 } )
                 },8000)
             })
         }
