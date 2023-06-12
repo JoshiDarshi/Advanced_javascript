@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let p1 = new Promise(function (res, rej) {
+            setTimeout(() => {
+                console.log("The first promise has resolve");
+                res(12)
+            }, 4000);
+        })
+        let p2 = new Promise(function (res, rej) {
+            setTimeout(() => {
+                console.log("The second promise has resolve");
+                res(13)
+            }, 5000);
+        })
+        let p3 = new Promise(function (res, rej) {
+            setTimeout(() => {
+                console.log("The third promise has resolve");
+                res(18)
+            }, 6000);
+        })
+        let total = 0
+        Promise.all([p1,p2,p3]).then((result)=>{
+            for(let i in result){total +=result[i]}
+            console.log(`total :- ${total}`);
+            console.log(`result :- ${result}`);
+        }).catch((error)=>{
+            console.log(`error :- ${error}`);
+        })
+    </script>
+</body>
+
+</html>
