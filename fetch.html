@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body>
+    
+
+
+<section>
+<div class="container">
+    <div class="row" id="result">
+    </div>
+</div>
+</section>
+    <script>
+        function getApiData() {
+            fetch("https://backend.grocetrip.com/app/get-products")
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                    let html = ``;
+
+                    for (const elm of data.products) {
+                        let str = elm.categories
+                        console.log(elm);
+                        html +=
+                            `
+                            <div class="card">
+                                <div class="card-body">
+                                <h4 class="card-title">${str}</h4>
+                                <p class="card-text">${elm._id}</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                            `
+
+                        document.getElementById("result").innerHTML = html
+
+                    }
+
+
+
+
+
+                })
+                // .catch((error) => {
+                //     console.log(error);
+                // });
+
+        }
+
+
+
+        document.addEventListener("click", getApiData)
+
+
+    </script>
+</body>
+</html>
+

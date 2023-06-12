@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Set Concept</h1>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+
+    <script>
+
+        const letter = new Set(["a", "b", "c"])
+        // document.getElementById("p1").innerHTML=letter.size
+
+        //to add new elements in set
+        letter.add("d")
+        letter.add(11)
+        //letter.add("a") the no of size is not increase as it takes only unique values
+        document.getElementById("p1").innerHTML = letter.size
+
+        //add variables to set
+        const a = "a"
+        const b = "b"
+        const c = "c"
+        const variables = new Set();
+        variables.add(a)
+        variables.add(b)
+        variables.add(c)
+        document.getElementById("p2").innerHTML = variables.size
+        //iterate set values
+        let text = ""
+        for (let i of variables) {
+            text += i + "<br>"
+        }
+        document.getElementById("p3").innerHTML = text
+        //iterate numeric values
+        const n = new Set([1, 2, 3, 4, 5])
+        const n1 = 0
+        for (let i of n) {
+            n1 += i
+        }
+        document.getElementById("p4").innerHTML = n1
+    </script>
+</body>
+
+</html>
